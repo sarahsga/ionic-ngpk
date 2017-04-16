@@ -1,50 +1,548 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/custom.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<img src="img/logo.png" class="logo" width="634" height="225">
+				<h4>Building Hybrid Mobile Apps with Ionic 2</h4>
+			</section>
+
+
+			<section>
+				<ul>
+					<h2>Sarah Ahmed</h2>
+					<li>Hybrid Mobile and Web App Developer</li>
+					<li>@ Recurship</li>
+					<li>@ Upwork</li>
+					<li>Developing beautiful Ionic apps for the past 2 years</li>
+				</ul>
+
+			</section>
+
+			<section>
+				<h2>Overview</h2>
+				<ol>
+					<li>Native vs Hybrid Apps</li>
+					<li>Intro Phonegap / Cordova</li>
+					<li>Intro Ionic</li>
+					<li>UI Components</li>
+					<li>Ionic Native</li>
+					<li>Theming</li>
+					<li>Navigation</li>
+					<li>Ionic CLI</li>
+				</ol>
+			</section>
+
+
+			<section>
+				<blockquote>
+					&ldquo;I want to build an app!&rdquo;
+				</blockquote>
+			</section>
+
+
+			<section>
+				<h2>More Platforms. More Problems.</h2>
+				<ul>
+					<li>Proficiency in each platform required</li>
+					<li>Entirely separate code bases</li>
+					<li>Timely &amp; expensive development</li>
+				</ul>
+				<p style="margin-top: 60px">
+					<div>
+						<img class="fragment fade-out" src="img/android.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; left: 100px;">
+						<div class="fragment fade-in" style="position: absolute; left: 150px;">
+							<p><img src="img/android.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+							<p>Java</p>
+						</div>
+					</div>
+					<div>
+						<img class="fragment fade-out" src="img/apple.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 400px;">
+						<div class="fragment fade-in" style="position: absolute; left: 320px;">
+							<p><img src="img/apple.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+							<p>Objective-C / Swift</p>
+						</div>
+					</div>
+					<div>
+						<img class="fragment fade-out" src="img/windows.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 100px">
+						<div class="fragment fade-in" style="position: absolute; left: 700px;">
+							<p><img src="img/windows.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+							<p>C#</p>
+						</div>
+					</div>
+				</p>
+			</section>
+
+
+			<section>
+				<h1>Hybrid Apps!</h1>
+				<h2>Write one, run anywhere!</h2>
+				<!--<p style="font-size: 32px">Direct access to <strong>native APIs</strong></p>
+        <p style="font-size: 32px">Familiar <strong>web dev</strong> environment</p>-->
+				<p style="margin-top: 60px">
+					<div>
+						<img class="fragment fade-out" src="img/android.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; left: 100px;">
+						<div class="fragment fade-in" style="position: absolute; left: 150px;">
+							<p><img src="img/android.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+							<p>Web</p>
+							<p>Developer</p>
+						</div>
+					</div>
+					<div>
+						<img class="fragment fade-out" src="img/apple.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 400px;">
+						<div class="fragment fade-in" style="position: absolute; left: 420px;">
+							<p><img src="img/apple.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+							<p>Web</p>
+							<p>Developer</p>
+						</div>
+					</div>
+					<div>
+						<img class="fragment fade-out" src="img/windows.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 100px">
+						<div class="fragment fade-in" style="position: absolute; left: 700px;">
+							<p><img src="img/windows.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+							<p>Web</p>
+							<p>Developer</p>
+						</div>
+					</div>
+				</p>
+			</section>
+
+			<section>
+				<h1>Cordova / Phonegap</h1>
+				<p style="line-height: 60px;">
+					Tools that package
+					<span class="invert">HTML5</span> , <span class="invert">CSS</span> and <span class="invert">Javascript</span> into
+					<span class="invert">multi-platform</span> native apps
+				</p>
+				<pre><code data-trim contenteditable class="javascript" style="max-height: 240px;">
+// MainActivity.java
+public class MainActivity extends CordovaActivity
+{
+	@Override
+	public void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		// Set by <content src="index.html" /> in config.xml
+		loadUrl(launchUrl);
+	}
+} 
+
+
+				</code></pre>
+			</section>
+
+
+			<section data-background="img/websdk.png" style="width:100%">
+			</section>
+
+			<section>
+				<h3 style="margin:0">Native SDKs...</h3>
+				<h2 style="font-size:2.2em;">Are Great!</h2>
+				<p style="margin:30px auto 20px auto; width: 600px">
+					Common UI, APIs, views, navigation, stack history, transitions, interactions, gestures, etc.
+				</p>
+				<img src="img/android-3.gif" height=450>
+				<img src="img/ios-1.gif" height=450>
+			</section>
+
+			<section data-background="white">
+				<img src="img/logo-blue.png" style="width:750px;">
+			</section>
+
+
+			<section>
+				<h3 style="margin:0; font-size:32px">Web Technologies You Already</h3>
+				<h2 style="font-size: 85px;">Know &amp; Love</h2>
+				<div style="margin-top: 30px">
+					<img src="img/html.png" class="logo" width="185" height="260">
+					<img src="img/css.png" class="logo" width="185" height="260" style="margin-left: 80px; margin-right: 80px;">
+					<img src="img/js.png" class="logo" width="185" height="260">
+				</div>
+				<p style="margin-top: 30px; opacity: 0.6">
+					(You'll feel right at home)
+				</p>
+			</section>
+
+
+			<section data-background="img/angular-bg.png">
+				<h3 style="font-size:42px; margin:0">Superpowered by</h3>
+				<h2 style="font-size:90px;">Angular 2</h2>
+				<p style="margin-top:60px;"><strong>Extends the HTML</strong> vocabulary</p>
+				<p>Proven for <strong>large-scale</strong> app development</p>
+				<p>UI Components using <strong>Directives &amp; Services</strong></p>
+				</ul>
+			</section>
+
+
+			<section data-background="img/sass.png">
+				<h2 style="font-size:3em; text-transform: none;">Sass!</h2>
+				<p>CSS generated from the <strong>Sass preprocessor</strong></p>
+				<p>Quickly give your app its own <strong>look and feel</strong></p>
+				<p>CSS designed to be <strong>easily overridden</strong></p>
+				<p><strong>Variables based</strong> with default settings</p>
+			</section>
+
+
+			<section data-background="img/phones-stacked.png">
+				<h2 style="color:black; margin-bottom: 50px">How it all comes together</h2>
+				<ul class="stack">
+					<li style="background: #20ab93">Your App</li>
+					<li style="background: #4c8df5">Ionic</li>
+					<li style="background: #d94442">Angular</li>
+					<li style="background: #3b4854">WebView (Cordova)</li>
+					<li style="background: #d4deee; color: #3b4854;">Native App</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<h2><strong>Platform Continuity</strong></h2>
+				<p>Matches the look-and-feel of the platform it’s displayed on <br><strong class="invert">with a single code base</strong></p>
+				<img src="img/platform-continuity.png">
+			</section>
+
+
+			<section data-background="white" class="ionic-blue">
+				<h2>Construct User Interface in no time with</h2>
+				<h1 style="background: #E6E6E6"><strong>Ionic <br>Components</strong></h1>
+			</section>
+
+			<section>
+				<h2><strong>Components</strong></h2>
+				<div class="col">
+					<ul>
+						<li>ActionSheets</li>
+						<li>Alerts</li>
+						<li>Buttons</li>
+						<li>Cards</li>
+						<li>DateTime</li>
+						<li>Inputs</li>
+						<li>Lists</li>
+						<li>Loading</li>
+						<li>Menus</li>
+					</ul>
+				</div>
+				<div class="col">
+					<ul>
+						<li>Popover</li>
+						<li>Range</li>
+						<li>SearchBar</li>
+						<li>Segment</li>
+						<li>Slides</li>
+						<li>Tabs</li>
+						<li>Toast</li>
+						<li>Toggle</li>
+					</ul>
+				</div>
+			</section>
+
+			<section data-background="white" class="ionic-blue">
+				<h2>Add native functionality to your app with</h2>
+				<h1 style="background: #E6E6E6"><strong>Ionic <br>Native</strong></h1>
+			</section>
+
+			<section>
+				<h2><strong>Ionic Native</strong></h2>
+				<p>A TypeScript wrapper for Cordova/PhoneGap</p>
+				<div class="col">
+					<ul>
+						<li>Battery Status</li>
+						<li>Call Number</li>
+						<li>Camera</li>
+						<li>Device Motion</li>
+						<li>Geolocation</li>
+						<li>Insomnia</li>
+						<li>Keyboard</li>
+						<li>Local Notifications</li>
+					</ul>
+				</div>
+				<div class="col">
+					<ul>
+						<li>Pedometer</li>
+						<li>Shake</li>
+						<li>SMS</li>
+						<li>Splash Screen</li>
+						<li>SQLite</li>
+						<li>Text To Speech</li>
+						<li>Vibration</li>
+					</ul>
+				</div>
+				<p>And many more ...</p>
+			</section>
+
+			<section>
+				<h2><strong>Ionic Native</strong></h2>
+				<p><span class="invert">Example - Camera plugin</span></p>
+				<pre><code class="Typescript">
+import { Camera } from '@ionic-native/camera';
+
+constructor(private camera: Camera) { }
+
+...
+
+this.camera.getPicture().then((imageData) => {
+
+ let base64Image = 'data:image/jpeg;base64,' + imageData;
+
+});	
+				</code></pre>
+			</section>
+
+			<section>
+				<h2><strong>Ionic Native</strong></h2>
+				<p><span class="invert"><strong>Mocking Plugins</strong> - Test native functionality in the browser</span></p>
+				<pre><code class="Typescript">
+import { Camera } from '@ionic-native/camera';
+
+class CameraMock extends Camera {
+
+  getPicture() {
+
+    return new Promise((resolve, reject) => {
+      resolve("BASE_64_ENCODED_DATA_GOES_HERE");
+    })
+
+  }
+
+}	
+				</code></pre>
+
+				<pre><code class="Typescript">
+providers: [
+  { provide: Camera, useClass: CameraMock }
+]	
+				</code></pre>
+			</section>
+
+			<section>
+				<h2><strong>Ionicons</strong></h2>
+				<img src="img/ionicons-3.png" height=800>
+			</section>
+
+			<section data-background="white" class="ionic-blue">
+				<h2>Customize the look of your app with </h2>
+				<h1 style="background: #E6E6E6"><strong>Ionic <br>Theming</strong></h1>
+			</section>
+
+			<section>
+				<h2><strong>Theming</strong></h2>
+				<p style="text-align: left; margin-left: 50px;"><span class="invert">Step 1:</span> Update $colors map in variables.scss</p>
+				<pre class="fragment" data-fragment-index="1"><code class="sass">
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  twitter: (
+    base: #55acee,
+    contrast: #ffffff
+  )
+);
+				</code></pre>
+
+				<p style="text-align: left; margin-left: 50px;" class="fragment" data-fragment-index="2"><span class="invert">Step 2:</span> Use it anywhere</p>
+				<pre class="fragment" data-fragment-index="3"><code class="xml">
+<ion-toolbar color="primary">
+    <ion-title>Toolbar</ion-title>
+</ion-toolbar>	
+				</code></pre>
+
+				<div style="margin-left: 20px; margin-top: -20px;" class="col col-60 fragment" data-fragment-index="4">
+
+					<pre><code class="sass">
+my-component {
+  background: color($colors, twitter, base); }	
+					</code></pre>
+
+				</div>
+				<div style="margin-left: -30px; margin-top: -20px;" class="col col-40 fragment" data-fragment-index="5">
+
+					<pre><code class="css">
+my-component {
+  background: #55acee; }	
+					</code></pre>
+
+				</div>
+
+			</section>
+
+			<section>
+				<h2><strong>Platform Specific Styles</strong></h2>
+				<p>Styles can be targeted to a specific mode</p>
+				<pre><code class="css">
+.button-md { 
+	background-color: #ff0000; 
+}
+
+.button-ios { 
+	background-color: #00ff00; 
+}
+
+.button-wp { 
+	background-color: #0000ff;
+}
+				</code></pre>
+			</section>
+
+			<section>
+				<h2><strong>Overriding Ionic Sass Variables</strong></h2>
+				<pre><code class="scss">
+$background-color: color($colors, light);
+
+$toolbar-background: color($colors, primary, base);
+				</code></pre>
+			</section>
+
+			<section>
+				<h2><strong>Config</strong></h2>
+				<p><span class="invert">Configure your entire app</span></p>
+				<pre><code class="Typescript">
+IonicModule.forRoot(MyApp, {
+    mode: 'wp',
+	backButtonText: 'Go Back'
+})
+				</code></pre>
+			</section>
+
+			<section>
+				<h2><strong>Config</strong></h2>
+				<p><span class="invert">Configure Specific Platforms</span></p>
+				<pre><code class="Typescript">
+IonicModule.forRoot(MyApp, {
+    tabsPlacement: 'bottom',
+    platforms: {
+    	ios: {
+          tabsPlacement: 'top',
+        }
+    }
+})
+				</code></pre>
+			</section>
+
+			<section data-background="white" class="ionic-blue">
+				<h2>Move Around</h2>
+				<h1 style="background: #E6E6E6"><strong>Navigation / <br>Routing</strong></h1>
+			</section>
+
+			<section>
+				<h2><strong>Navigation / Routing</strong></h2>
+				<p>Routing in Web App and Mobile App is <strong class="invert">NOT THE SAME</strong></p>
+				<p class="fragment" data-fragment-index="1">Mobile App maintains <strong class="invert">stacks of pages</strong></p>
+				<p class="fragment" data-fragment-index="2"><strong class="invert">Page</strong> - A component that takes up the whole screen</p>
+				<div class="fragment" data-fragment-index="3">
+					<p class="invert" style="border: 2px solid white; border-style: dashed; background-color: transparent; padding: 20px !important;"><strong>push()</strong></p>
+					<p class="invert" style="border: 2px solid white; border-style: dashed; background-color: transparent; padding: 20px !important;"><strong>pop()</strong></p>
+					<p class="invert" style="border: 2px solid white; border-style: dashed; background-color: transparent; padding: 20px !important;"><strong>setAsRoot()</strong></p>
+				</div>
+			</section>
+
+			<section>
+				<div style="border: 5px solid white; border-style: dashed;">
+					<p><code style="font-size: 1.2em;">npm install -g ionic cordova</code></p>
+					<br>
+					<p><code style="font-size: 1.2em;">ionic start myApp --v2</code></p>
+					<br>
+					<p><code style="font-size: 1.2em;">ionic serve</code></p>
+				</div>
+				<br>
+				<p>Boilerplate <strong>app structure</strong> ready for customization</p>
+				<p><strong>LiveReload</strong> both local and native builds</p>
+				<p>Build and run <strong>native apps</strong></p>
+			</section>
+
+			<section data-background="img/ionic-view.png">
+			</section>
+
+			<section>
+				<h2>Get Started with Ionic!</h2>
+				<br />
+				<p>
+					<strong>Getting started guide</strong>
+					<br />
+					<a href="hhttp://ionicframework.com/getting-started/" target="_blank">
+						<span class="light-text">ionicframework.com/getting-started</span>
+					</a>
+				</p>
+				<br />
+				<p>
+					<strong>Documentation</strong>
+					<br />
+					<a href="http://ionicframework.com/docs/" target="_blank">
+						<span class="light-text">ionicframework.com/docs</span>
+					</a>
+				</p>
+				<br />
+				<p>
+					<strong>Visit the Community Forum</strong>
+					<br />
+					<a href="http://forum.ionicframework.com/" target="_blank">
+						<span class="light-text">forum.ionicframework.com</span>
+					</a>
+				</p>
+				<br />
+				<p>
+					<strong>Contribute on GitHub</strong>
+					<br />
+					<a href="https://github.com/driftyco/ionic" target="_blank">
+						<span class="light-text">github.com/driftyco/ionic</span>
+					</a>
+				</p>
+			</section>
+
+			<section>
+				<h2>A little help from ionic-present</h2>
+				<h2>Thanks</h2>
+				<h4>
+					<a href="http://ionicframework.github.io/ionic-present/#/">
+              http://ionicframework.github.io/ionic-present
+            </a>
+				</h4>
+			</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
 </html>
