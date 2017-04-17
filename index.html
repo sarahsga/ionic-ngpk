@@ -100,35 +100,38 @@
 
 			<section>
 				<h1>Hybrid Apps!</h1>
-				<h2>Write once, run anywhere!</h2>
-				<!--<p style="font-size: 32px">Direct access to <strong>native APIs</strong></p>
+				<<<<<<< HEAD <h2>Write once, run anywhere!</h2>
+					=======
+					<h2>Write one, run anywhere!</h2>
+					>>>>>>> dev
+					<!--<p style="font-size: 32px">Direct access to <strong>native APIs</strong></p>
         <p style="font-size: 32px">Familiar <strong>web dev</strong> environment</p>-->
-				<p style="margin-top: 60px">
-					<div>
-						<img class="fragment fade-out" src="img/android.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; left: 100px;">
-						<div class="fragment fade-in" style="position: absolute; left: 150px;">
-							<p><img src="img/android.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
-							<p>Web</p>
-							<p>Developer</p>
+					<p style="margin-top: 60px">
+						<div>
+							<img class="fragment fade-out" src="img/android.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; left: 100px;">
+							<div class="fragment fade-in" style="position: absolute; left: 150px;">
+								<p><img src="img/android.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+								<p>Web</p>
+								<p>Developer</p>
+							</div>
 						</div>
-					</div>
-					<div>
-						<img class="fragment fade-out" src="img/apple.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 400px;">
-						<div class="fragment fade-in" style="position: absolute; left: 420px;">
-							<p><img src="img/apple.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
-							<p>Web</p>
-							<p>Developer</p>
+						<div>
+							<img class="fragment fade-out" src="img/apple.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 400px;">
+							<div class="fragment fade-in" style="position: absolute; left: 420px;">
+								<p><img src="img/apple.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+								<p>Web</p>
+								<p>Developer</p>
+							</div>
 						</div>
-					</div>
-					<div>
-						<img class="fragment fade-out" src="img/windows.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 100px">
-						<div class="fragment fade-in" style="position: absolute; left: 700px;">
-							<p><img src="img/windows.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
-							<p>Web</p>
-							<p>Developer</p>
+						<div>
+							<img class="fragment fade-out" src="img/windows.png" class="logo" width="200" height="200" style="margin-right: 10px; position: absolute; right: 100px">
+							<div class="fragment fade-in" style="position: absolute; left: 700px;">
+								<p><img src="img/windows.png" class="logo" width="50" height="50" style="margin: 0px;"></p>
+								<p>Web</p>
+								<p>Developer</p>
+							</div>
 						</div>
-					</div>
-				</p>
+					</p>
 			</section>
 
 			<section>
@@ -349,45 +352,43 @@ providers: [
 			</section>
 
 			<section>
-				<h2><strong>Theming</strong></h2>
-				<p style="text-align: left; margin-left: 50px;"><span class="invert">Step 1:</span> Update $colors map in variables.scss</p>
-				<pre class="fragment" data-fragment-index="1"><code class="sass">
+					<h2><strong>Theming</strong></h2>
+					<p style="text-align: left; margin-left: 50px;"><span class="invert">Step 1:</span> Update $colors map in variables.scss</p>
+					<pre><code class="sass">
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222,
   twitter: (
     base: #55acee,
     contrast: #ffffff
   )
 );
-				</code></pre>
-
-				<p style="text-align: left; margin-left: 50px;" class="fragment" data-fragment-index="2"><span class="invert">Step 2:</span> Use it anywhere</p>
-				<pre class="fragment" data-fragment-index="3"><code class="xml">
+					</code></pre>
+					<p style="text-align: left; margin-left: 50px;"><span class="invert">Step 2:</span> Use it anywhere</p>
+					<pre><code class="xml">
 <ion-toolbar color="primary">
     <ion-title>Toolbar</ion-title>
 </ion-toolbar>	
 				</code></pre>
 
-				<div style="margin-left: 20px; margin-top: -20px;" class="col col-60 fragment" data-fragment-index="4">
+					<div style="margin-left: 20px; margin-top: -20px;" class="col col-60 fragment" data-fragment-index="4">
 
-					<pre><code class="sass">
+						<pre><code class="sass">
 my-component {
   background: color($colors, twitter, base); }	
 					</code></pre>
 
-				</div>
-				<div style="margin-left: -30px; margin-top: -20px;" class="col col-40 fragment" data-fragment-index="5">
+					</div>
+					<div style="margin-left: -30px; margin-top: -20px;" class="col col-40 fragment" data-fragment-index="5">
 
-					<pre><code class="css">
+						<pre><code class="css">
 my-component {
   background: #55acee; }	
 					</code></pre>
 
-				</div>
+					</div>
+				</section>
 
 			</section>
 
@@ -518,8 +519,8 @@ IonicModule.forRoot(MyApp, {
 				<h2>A little help from ionic-present</h2>
 				<h2>Thanks</h2>
 				<h4>
-					<a href="http://ionicframework.github.io/ionic-present/#/">
-              http://ionicframework.github.io/ionic-present
+					<a href="https://github.com/driftyco/ionic-present">
+              https://github.com/driftyco/ionic-present
             </a>
 				</h4>
 			</section>
@@ -530,18 +531,18 @@ IonicModule.forRoot(MyApp, {
 	<script src="js/reveal.js"></script>
 
 	<script>
-		// More info https://github.com/hakimel/reveal.js#configuration
-		Reveal.initialize({
-			history: true,
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
 
-			// More info https://github.com/hakimel/reveal.js#dependencies
-			dependencies: [
-				{ src: 'plugin/markdown/marked.js' },
-				{ src: 'plugin/markdown/markdown.js' },
-				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-			]
-		});
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+				]
+			});
 	</script>
 </body>
 
